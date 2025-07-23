@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solar System</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Tata Surya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mengenal Planet di Tata Surya</h1>
+    </header>
     <main>
-      <div class="container">
-        <h1>Solar System</h1>
-        <p>
-          Explore the wonders of our solar system, from the blazing Sun to the
-          distant icy planets.
-        </p>
-      </div>
-      <div id="space">
-        <div class="star"></div>
-        <img src="./images/earth-homepage.jpg" alt="Earth" class="earth" />
-      </div>
+        <section class="planet-list">
+            <div class="planet-card">
+                <h2>Merkurius</h2>
+                <img src="images/Merkurius.png" alt="Gambar Planet Merkurius">
+                <p>Planet terkecil dan terdekat dengan Matahari.</p>
+            </div>
+            <div class="planet-card">
+                <h2>Mars</h2>
+                <img src="images/Mars.png" alt="Gambar Planet Mars">
+                <p>Dikenal sebagai 'Planet Merah'.</p>
+            </div>
+            <div class="planet-card">
+                <h2>Bumi</h2>
+                <img src="images/bumi.png" alt="Gambar Planet Bumi">
+                <p>Planet tempat kita tinggal, satu-satunya yang diketahui memiliki kehidupan.</p>
+            </div>
+            <div class="planet-card">
+                <h2>Jupiter</h2>
+                <img src="images/Jupiter.png" alt="Gambar Planet Jupiter">
+                <p>Planet terbesar di tata surya kita.</p>
+            </div>
+            <div class="planet-card">
+                <h2>Bumi (Homepage)</h2>
+                <img src="images/earth-homepage.jpg" alt="Gambar Homepage Bumi">
+                <p>Tampilan lain dari planet kita.</p>
+            </div>
+        </section>
     </main>
-    <script src="./script.js"></script>
-  </body>
+    <footer>
+        <p>&copy; 2023 Proyek Tata Surya Kita</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
 </html>
