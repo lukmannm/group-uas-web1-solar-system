@@ -1,21 +1,48 @@
-const space = document.getElementById("space");
-const totalStars = 200;
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const planetItems = document.querySelectorAll('.planet-item');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const currentPlanetNameDisplay = document.getElementById('current-planet-name');
 
-for (let i = 0; i < totalStars; i++) {
-  const star = document.createElement("div");
-  star.classList.add("star");
+    let currentIndex = 0; // Index planet yang sedang ditampilkan
 
-  // Random Position
-  star.style.left = Math.random() * 100 + "vw";
-  star.style.top = Math.random() * 100 + "vh";
+    // Fungsi untuk memperbarui tampilan carousel
+    const updateCarousel = () => {
+        // Geser track carousel
+        const offset = -currentIndex * window.innerWidth; // Geser sejauh lebar viewport
+        carouselTrack.style.transform = `translateX(${offset}px)`;
 
-  // Size random
-  const size = Math.random() * 2 + 1;
-  star.style.width = size + "px";
-  star.style.height = size + "px";
+        // Perbarui nama planet yang ditampilkan di bawah
+        const currentPlanetName = planetItems[currentIndex].querySelector('h2').textContent;
+        currentPlanetNameDisplay.textContent = currentPlanetName;
+    };
 
-  // Delay animation
-  star.style.animationDelay = Math.random() * 2 + "s";
+    // Tombol Sebelumnya
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            // Jika sudah di awal, kembali ke planet terakhir
+            currentIndex = planetItems.length - 1;
+        }
+        updateCarousel();
+    });
 
-  space.appendChild(star);
-}
+    // Tombol Selanjutnya
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < planetItems.length - 1) {
+            currentIndex++;
+        } else {
+            // Jika sudah di akhir, kembali ke planet pertama
+            currentIndex = 0;
+        }
+        updateCarousel();
+    });
+
+    // Inisialisasi tampilan awal
+    updateCarousel();
+
+    // Tambahan: Agar carousel responsif saat ukuran jendela berubah
+    window.addEventListener('resize', updateCarousel);
+});

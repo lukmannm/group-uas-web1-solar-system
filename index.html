@@ -3,45 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jelajah Tata Surya</title>
+    <title>Jelajah Tata Surya Interaktif</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Mengenal Planet di Tata Surya</h1>
+        <div class="header-left">PLANET</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-button">DETAIL JARAK</a></li>
+                <li><a href="#" class="nav-button">HOME</a></li>
+                <li><a href="#" class="nav-button">TEAM</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            &#9776;
+        </div>
     </header>
+
     <main>
-        <section class="planet-list">
-            <div class="planet-card">
-                <h2>Merkurius</h2>
-                <img src="images/Merkurius.png" alt="Gambar Planet Merkurius">
-                <p>Planet terkecil dan terdekat dengan Matahari.</p>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="planet-item">
+                    <img src="images/bumi.png" alt="Bumi" class="planet-image">
+                </div>
+                <div class="planet-item">
+                    <img src="images/Merkurius.png" alt="Merkurius" class="planet-image">
+                </div>
+                <div class="planet-item">
+                    <img src="images/venus.png" alt="Venus" class="planet-image">
+                </div>
+                <div class="planet-item">
+                    <img src="images/Mars.png" alt="Mars" class="planet-image">
+                    </div>
+                </div>
+                <div class="planet-item">
+                    <img src="images/Jupiter.png" alt="Jupiter" class="planet-image">
+                </div>
+                <div class="planet-item">
+                    <img src="images/saturnus.png" alt="Saturnus" class="planet-image">
+                </div>
+                <div class="planet-item">
+                    <img src="images/Uranus.png" alt="Uranus" class="planet-image">
+                </div>
+                <div class="planet-item">
+                    <img src="images/neptunus.png" alt="Neptunus" class="planet-image">
+                </div>
             </div>
-            <div class="planet-card">
-                <h2>Mars</h2>
-                <img src="images/Mars.png" alt="Gambar Planet Mars">
-                <p>Dikenal sebagai 'Planet Merah'.</p>
-            </div>
-            <div class="planet-card">
-                <h2>Bumi</h2>
-                <img src="images/bumi.png" alt="Gambar Planet Bumi">
-                <p>Planet tempat kita tinggal, satu-satunya yang diketahui memiliki kehidupan.</p>
-            </div>
-            <div class="planet-card">
-                <h2>Jupiter</h2>
-                <img src="images/Jupiter.png" alt="Gambar Planet Jupiter">
-                <p>Planet terbesar di tata surya kita.</p>
-            </div>
-            <div class="planet-card">
-                <h2>Bumi (Homepage)</h2>
-                <img src="images/earth-homepage.jpg" alt="Gambar Homepage Bumi">
-                <p>Tampilan lain dari planet kita.</p>
-            </div>
-        </section>
+            <button class="carousel-button prev">❮</button>
+            <button class="carousel-button next">❯</button>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2023 Proyek Tata Surya Kita</p>
-    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
