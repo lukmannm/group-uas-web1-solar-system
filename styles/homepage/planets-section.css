@@ -12,6 +12,7 @@
     margin-bottom: 3rem;
     text-align: center;
     animation: glow 2s ease-in-out infinite alternate;
+    z-index: 99;
 }
 
 .planet-carousel {
@@ -39,14 +40,18 @@
 }
 
 .planet-image {
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     margin-bottom: 20px;
     animation: planetRotate 20s linear infinite;
     object-fit: cover;
     pointer-events: none;
     user-select: none;
+}
+
+.saturnus img {
+    width: 800px !important;
 }
 
 .planet-container h3 {

@@ -45,8 +45,7 @@ const scrollToPlanets = () => {
 
 // Planet carousel
 let currentPlanet = 0;
-// TODO: Increse total planet after add more image
-const totalPlanets = 2; 
+const totalPlanets = 8; 
 const planetTrack = document.getElementById('planetTrack');
 
 const updateCarousel = () => {
@@ -102,6 +101,7 @@ planetTrack.addEventListener('touchend', () => {
 planetTrack.addEventListener('mousedown', (e) => {
   startX = e.clientX;
   isDragging = true;
+  currentX = null; 
   planetTrack.style.cursor = 'grabbing';
 });
 
@@ -113,14 +113,16 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => {
   if (!isDragging) return;
 
-  const diffX = startX - currentX;
-  const threshold = 50;
+  if (currentX !== null) {
+    const diffX = startX - currentX;
+    const threshold = 50;
 
-  if (Math.abs(diffX) > threshold) {
-    if (diffX > 0) {
-      nextPlanet();
-    } else {
-      previousPlanet();
+    if (Math.abs(diffX) > threshold) {
+      if (diffX > 0) {
+        nextPlanet();
+      } else {
+        previousPlanet();
+      }
     }
   }
 
