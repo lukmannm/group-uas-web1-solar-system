@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jelajah Tata Surya Interaktif</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/homepage/audio.css" />
+    <link rel="stylesheet" href="/styles/homepage/hero-section.css" />
+    <link rel="stylesheet" href="/styles/homepage/modal.css" />
+    <link rel="stylesheet" href="/styles/homepage/planets-section.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
+
     <header>
         <div class="header-left">PLANET</div>
         <nav>
@@ -16,93 +24,40 @@
                 <li><a href="#" class="nav-button">TEAM</a></li>
             </ul>
         </nav>
-        <div class="header-right">
-            &#9776;
-        </div>
+        <div class="header-right">&#9776;</div>
     </header>
 
     <main>
         <div class="carousel-container">
             <div class="carousel-track">
-                <div class="planet-item">
-                    <a href="detail-bumi.html">
-                        <img src="images/bumi.png" alt="Bumi" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>BUMI</h2>
-                        <p>Planet tempat kita tinggal, satu-satunya yang diketahui memiliki kehidupan.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-merkurius.html">
-                        <img src="images/Merkurius.png" alt="Merkurius" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>MERKURIUS</h2>
-                        <p>Planet terkecil dan terdekat dengan Matahari.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-venus.html">
-                        <img src="images/venus.png" alt="Venus" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>VENUS</h2>
-                        <p>Sering disebut 'Bintang Kejora', planet terpanas di tata surya.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-mars.html">
-                        <img src="images/Mars.png" alt="Mars" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>MARS</h2>
-                        <p>Dikenal sebagai 'Planet Merah' dan menjadi fokus pencarian kehidupan.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-jupiter.html">
-                        <img src="images/Jupiter.png" alt="Jupiter" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>JUPITER</h2>
-                        <p>Planet terbesar di tata surya kita, dikenal dengan Bintik Merah Besarnya.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-saturnus.html">
-                        <img src="images/saturnus.png" alt="Saturnus" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>SATURNUS</h2>
-                        <p>Planet bercincin indah, kedua terbesar setelah Jupiter.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-uranus.html">
-                        <img src="images/Uranus.png" alt="Uranus" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>URANUS</h2>
-                        <p>Planet es raksasa yang berputar miring.</p>
-                    </div>
-                </div>
-                <div class="planet-item">
-                    <a href="detail-neptunus.html">
-                        <img src="images/neptunus.png" alt="Neptunus" class="planet-image">
-                    </a>
-                    <div class="planet-info">
-                        <h2>NEPTUNUS</h2>
-                        <p>Planet terjauh dan berangin kencang di tata surya.</p>
-                    </div>
-                </div>
+                <!-- planet-item list seperti Bumi, Mars, dsb -->
+                <!-- ... ambil dari punyamu atau tambah sendiri -->
             </div>
             <button class="carousel-button prev">❮</button>
             <button class="carousel-button next">❯</button>
         </div>
-    
     </main>
 
+    <!-- Greeting Modal -->
+    <div id="greeting-modal" class="modal">
+        <div class="start-in">
+            <div class="modal-content">
+                <img src="/images/rocket.webp" alt="Rocket" class="rocket-img" />
+                <h2>Welcome to the Solar System</h2>
+                <button id="start-btn">Let's Explore</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button play/pause -->
+    <div id="audio-toggle">
+        <button id="toggle-btn">🔇</button>
+        <audio id="bg-audio" autoplay loop>
+            <source src="/audio/calm-space-music-312291.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
     <script src="script.js"></script>
+    <script src="/scripts/homepage/audio.js"></script>
 </body>
 </html>

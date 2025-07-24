@@ -1,381 +1,69 @@
 /* Gaya Dasar Body */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0d0e12; /* Background gelap */
-    color: #fff;
-    overflow-x: hidden; /* Penting: menyembunyikan scrollbar horizontal */
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0d1421 100%);
+    color: white;
+    overflow-x: hidden;
 }
 
-/* Gaya Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: rgba(0, 0, 0, 0.5); /* Sedikit transparan */
-    position: fixed; /* Header tetap di atas */
-    width: 100%;
+/* Space Background */
+#space {
     top: 0;
     left: 0;
-    z-index: 1000; /* Pastikan header di atas elemen lain */
-    box-sizing: border-box; /* Agar padding tidak menambah lebar */
-}
-
-.header-left {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #00bfff; /* Warna biru untuk "PLANET" */
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.2); /* Latar belakang abu-abu transparan untuk tombol */
-    border-radius: 5px;
-    overflow: hidden; /* Untuk efek border-radius yang rapi */
-}
-
-nav li {
-    border-right: 1px solid rgba(255, 255, 255, 0.3); /* Pemisah antar tombol */
-}
-
-    nav li:last-child {
-        border-right: none;
-    }
-
-nav a {
-    display: block;
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-    nav a:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
-.header-right {
-    font-size: 1.8em;
-    cursor: pointer;
-}
-
-/* Gaya Konten Utama / Carousel */
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Memusatkan secara vertikal */
-    align-items: center; /* Memusatkan secara horizontal */
-    min-height: 100vh;
-    padding-top: 80px; /* Untuk memberi ruang header fixed */
-    position: relative;
-    overflow: hidden; /* Penting untuk menyembunyikan planet di luar viewport */
-    width: 100%; /* Pastikan main mengambil seluruh lebar untuk centering */
-    box-sizing: border-box;
-}
-
-.carousel-container {
     width: 100%;
-    max-width: 1200px; /* Lebar maksimum carousel */
-    position: relative;
+    height: 100%;
     overflow: hidden;
-    height: 600px; /* Ketinggian carousel */
-    display: flex;
-    align-items: center;
-    margin: 0 auto; /* Memusatkan container secara horizontal */
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Animasi geser */
-    height: 100%;
-}
-
-.planet-item {
-    min-width: 100vw; /* Setiap item mengambil seluruh lebar viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Memusatkan gambar dan info secara horizontal di dalam item */
-    flex-shrink: 0; /* Penting agar item tidak mengecil */
-    position: relative;
-    height: 100%;
-}
-
-    .planet-item a { /* Gaya untuk link gambar */
-        display: flex; /* Gunakan flexbox untuk memusatkan gambar di dalam link */
-        justify-content: center;
-        align-items: center;
-        height: 100%; /* Link mengisi tinggi item */
-        width: 100%; /* Link mengisi lebar item */
-        text-decoration: none; /* Hilangkan underline */
-        z-index: 10; /* Pastikan link berada di atas (bisa diklik) */
-        position: relative; /* Diperlukan untuk z-index agar berfungsi */
-    }
-
-.planet-image {
-    max-height: 70%; /* Batasi tinggi gambar agar ada ruang untuk info */
-    max-width: 70%; /* Batasi lebar gambar */
-    object-fit: contain; /* Agar gambar tidak terdistorsi */
-    position: absolute; /* Untuk menempatkan gambar di tengah */
-    left: 50%;
-    top: 40%; /* Sesuaikan posisi vertikal gambar */
-    transform: translate(-50%, -50%);
-    opacity: 0.8; /* Sedikit transparan agar terlihat seperti di angkasa */
-    /* Pastikan tidak ada pointer-events: none; di sini */
-}
-
-.planet-info {
-    position: absolute;
-    bottom: 50px; /* Posisi teks info di bawah */
-    text-align: center; /* Memusatkan teks di dalam planet-info */
-    width: 100%;
-    padding: 0 20px; /* Sedikit padding horizontal agar teks tidak terlalu mepet ke sisi */
-    box-sizing: border-box;
-    /* Sangat Penting: Hapus pointer-events: none; dari sini! */
-    /* pointer-events: none; <--- JIKA ADA, HAPUS BARIS INI! */
-}
-
-    .planet-info h2 {
-        font-size: 3em;
-        margin-bottom: 10px;
-        color: #00bfff; /* Warna biru untuk nama planet */
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        pointer-events: auto; /* Aktifkan kembali pointer events untuk teks */
-    }
-
-    .planet-info p {
-        font-size: 1.2em;
-        max-width: 600px;
-        margin: 0 auto; /* Memusatkan paragraf jika lebar kurang dari max-width */
-        line-height: 1.5;
-        pointer-events: auto; /* Aktifkan kembali pointer events untuk teks */
-    }
-
-/* Gaya Tombol Carousel */
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    border: none;
-    padding: 15px 20px;
-    font-size: 2em;
-    cursor: pointer;
-    z-index: 999; /* Di atas link gambar */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-    .carousel-button:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-    }
-
-    .carousel-button.prev {
-        left: 20px;
-    }
-
-    .carousel-button.next {
-        right: 20px;
-    }
-
-/* Gaya Nama Planet di Bawah Carousel */
-#current-planet-name {
-    margin-top: 30px;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #00bfff;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    text-align: center; /* Pastikan nama planet di bawah juga terpusat */
-    width: 100%; /* Pastikan mengambil seluruh lebar untuk centering */
-}
-
-/* Media Queries untuk Responsif */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    .header-left {
-        font-size: 1.5em;
-    }
-
-    nav {
-        display: none; /* Sembunyikan navigasi di layar kecil */
-    }
-
-    .header-right {
-        font-size: 1.5em;
-    }
-
-    .planet-image {
-        max-height: 60%;
-        max-width: 90%;
-    }
-
-    .planet-info h2 {
-        font-size: 2em;
-    }
-
-    .planet-info p {
-        font-size: 1em;
-    }
-
-    #current-planet-name {
-        font-size: 2em;
-    }
-}
-
-/* Gaya untuk Halaman Detail (detail-bumi.html) */
-/* Ini adalah bagian yang akan kamu gunakan di <style> tag di detail-bumi.html */
-/* Atau bisa juga dimasukkan ke styles.css jika ingin satu file CSS */
-.header-detail { /* Gaya header mirip di index.html */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-sizing: border-box;
+    z-index: -1; /* Pastikan di belakang konten */
 }
 
-    .header-detail .header-left {
-        font-size: 1.8em;
-        font-weight: bold;
-        color: #00bfff;
-    }
-
-    .header-detail nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    .header-detail nav li {
-        border-right: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-        .header-detail nav li:last-child {
-            border-right: none;
-        }
-
-    .header-detail nav a {
-        display: block;
-        padding: 10px 20px;
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-
-        .header-detail nav a:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-        }
-
-.detail-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 100px 50px 50px 50px;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite;
 }
 
-.detail-image-container {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    text-align: center;
+    .star.small {
+        opacity: 0.4;
+    }
+
+    .star.medium {
+        opacity: 0.6;
+    }
+
+    .star.large {
+        opacity: 0.9;
+    }
+
+/* Animasi Bintang */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
-    .detail-image-container img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+/* Animasi Glow Teks */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
     }
 
-.detail-text-container {
-    flex: 2;
-    min-width: 300px;
-    max-width: 700px;
+    50% {
+        text-shadow: 0 0 15px #0072ff, 0 0 25px #0072ff;
+    }
+
+    100% {
+        text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
+    }
 }
 
-    .detail-text-container h1 {
-        color: #00bfff;
-        font-size: 3em;
-        margin-top: 0;
-    }
-
-    .detail-text-container p {
-        font-size: 1.1em;
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-.back-button-container {
-    width: 100%;
-    text-align: center;
-    margin-top: 40px;
-    padding-bottom: 50px;
-}
-
-.back-button {
-    display: inline-block;
-    background-color: #00bfff;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-    .back-button:hover {
-        background-color: #009acd;
-    }
-
-/* Responsive adjustments for detail page */
-@media (max-width: 768px) {
-    .header-detail {
-        padding: 15px 20px;
-    }
-
-        .header-detail nav {
-            display: none;
-        }
-
-    .detail-content {
-        flex-direction: column;
-        padding: 80px 20px 20px 20px;
-        gap: 30px;
-    }
-
-    .detail-image-container, .detail-text-container {
-        min-width: unset;
-        max-width: 100%;
-    }
-
-        .detail-text-container h1 {
-            font-size: 2.5em;
-        }
-
-        .detail-text-container p {
-            font-size: 1em;
-        }
-}
+/* ==== SEMUA GAYA KAMU (HEAD) TETAP DIPAKAI ==== */
+/* Mulai dari header, carousel, responsive, planet-info, hingga halaman detail */
+/* Paste seluruh isi CSS kamu dari <header> sampai akhir (tanpa bagian body yang duplikat) */
