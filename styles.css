@@ -5,96 +5,68 @@
 }
 
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0d1421 100%);
+  color: white;
+  overflow-x: hidden;
 }
 
-main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  width: 100%;
-  padding: 0 40px;
-}
-
-.container h1 {
-  font-size: 80px;
-}
-
-.container p {
-  font-size: 20px;
-}
-
+/* Space Background */
 #space {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  z-index: 0;
-}
-
-.earth {
-  position: absolute;
-  right: -30%;
-  top: 50%;
-  max-width: 70%;
-  animation: float 6s ease-in-out infinite;
-  z-index: 99;
 }
 
 .star {
   position: absolute;
-  width: 2px;
-  height: 2px;
-  background-color: white;
+  background: white;
   border-radius: 50%;
-  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.8;
+  animation: twinkle 3s infinite;
 }
 
+.star.small {
+  opacity: 0.4;
+}
+
+.star.medium {
+  opacity: 0.6;
+}
+
+.star.large {
+  opacity: 0.9;
+}
+
+
+/* Animations global */
+
+/* Animation stars */
 @keyframes twinkle {
+
   0%,
   100% {
     opacity: 0.5;
   }
+
   50% {
     opacity: 1;
   }
 }
 
-@keyframes float {
+/* Animation glow for text */
+@keyframes glow {
   0% {
-    transform: translateY(-50%) scale(1);
+    text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
   }
+
   50% {
-    transform: translateY(-52%) scale(1.02);
+    text-shadow: 0 0 15px #0072ff, 0 0 25px #0072ff;
   }
+
   100% {
-    transform: translateY(-50%) scale(1);
-  }
-}
-
-/* Mobile version */
-@media (max-width: 600px) {
-  .container {
-    text-align: center;
-  }
-
-  .container h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
-
-  .container p {
-    font-size: 15px;
-  }
-
-  .earth {
-    display: none;
+    text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
   }
 }
