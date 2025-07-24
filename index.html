@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar System</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles/homepage/hero-section.css" />
+    <link rel="stylesheet" href="/styles/homepage/planets-section.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,19 +15,48 @@
     />
   </head>
   <body>
-    <main>
+    <div id="space"></div>
+
+    <section class="header">
       <div class="container">
         <h1>Solar System</h1>
         <p>
           Explore the wonders of our solar system, from the blazing Sun to the
           distant icy planets.
         </p>
+        <button class="explore-btn" onclick="scrollToPlanets()">
+          Explore Planets
+        </button>
       </div>
-      <div id="space">
-        <div class="star"></div>
-        <img src="./images/earth-homepage.jpg" alt="Earth" class="earth" />
+
+      <!-- Planet Illustrations -->
+      <div class="planet earth"></div>
+      <div class="planet mars"></div>
+      <div class="planet jupiter"></div>
+      <div class="planet saturn"></div>
+      <div class="planet venus"></div>
+      <div class="planet mercury"></div>
+    </section>
+
+    <section class="planets-section" id="planets">
+      <h2 class="planets-title">Discover Our Solar System</h2>
+
+      <div class="planet-carousel">
+        <div class="planet-track" id="planetTrack">
+          <!-- Mercury -->
+          <div class="planet-container">
+            <img src="/images/Merkurius.png" class="planet-image" />
+            <h3>Mercury</h3>
+          </div>
+
+          <!-- Earth -->
+          <div class="planet-container">
+            <img src="/images/bumi.png" class="planet-image" />
+            <h3>Earth</h3>
+          </div>
+        </div>
       </div>
-    </main>
+    </section>
     <script src="./script.js"></script>
   </body>
 </html>
