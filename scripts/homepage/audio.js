@@ -4,8 +4,8 @@ const startBtn = document.getElementById("start-btn");
 const modal = document.getElementById("greeting-modal");
 const modalContent = document.querySelector(".modal-content");
 
-let isPlaying = false;
 
+let isPlaying = false;
 // Play audio and close modal after click
 startBtn?.addEventListener("click", () => {
   modalContent.classList.add("fly-up");
@@ -19,8 +19,15 @@ startBtn?.addEventListener("click", () => {
   // Hide modal
   setTimeout(() => {
     modal.style.display = "none";
+    document.body.style.overflow = '';
+    document.body.style.height = '';
   }, 1200);
 });
+
+const disableScroll = () => {
+  document.body.style.overflow = 'hidden';
+  document.body.style.height = '100%';
+}
 
 // Manual play/pause audio
 toggleBtn?.addEventListener("click", () => {
@@ -33,3 +40,6 @@ toggleBtn?.addEventListener("click", () => {
   }
   isPlaying = !isPlaying;
 });
+
+// Initialize
+disableScroll();
