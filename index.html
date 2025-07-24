@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar System</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles/homepage/audio.css" />
     <link rel="stylesheet" href="/styles/homepage/hero-section.css" />
+    <link rel="stylesheet" href="/styles/homepage/modal.css" />
     <link rel="stylesheet" href="/styles/homepage/planets-section.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,6 +59,27 @@
         </div>
       </div>
     </section>
+
+    <!-- Greeting Modal -->
+    <div id="greeting-modal" class="modal">
+      <div class="start-in">
+        <div class="modal-content">
+          <img src="/images/rocket.webp" alt="Rocket" class="rocket-img" />
+          <h2>Welcome to the Solar System</h2>
+          <button id="start-btn">Let's Explore</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button play/pause -->
+    <div id="audio-toggle">
+      <button id="toggle-btn">🔇</button>
+      <audio id="bg-audio" autoplay loop>
+        <source src="/audio/calm-space-music-312291.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
     <script src="./script.js"></script>
+    <script src="/scripts/homepage/audio.js"></script>
   </body>
 </html>
