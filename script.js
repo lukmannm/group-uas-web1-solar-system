@@ -1,4 +1,3 @@
-// ==== BAGIAN BINTANG (dari main)
 const createStars = () => {
     const space = document.getElementById('space');
     const starCount = 200;
@@ -7,9 +6,11 @@ const createStars = () => {
         const star = document.createElement('div');
         star.className = 'star';
 
+        // Random Position
         star.style.left = Math.random() * 100 + '%';
         star.style.top = Math.random() * 200 + '%';
 
+        // Different star sizes
         const size = Math.random();
         let starSize, starClass;
 
@@ -28,71 +29,109 @@ const createStars = () => {
         star.style.width = starSize + 'px';
         star.style.height = starSize + 'px';
         star.style.animationDelay = Math.random() * 3 + 's';
+        // durations
         star.style.animationDuration = (Math.random() * 2 + 2) + 's';
 
         space.appendChild(star);
     }
-};
+}
 
-// ==== BAGIAN SCROLL PLANETS (dari main)
+// Scroll to planets section
 const scrollToPlanets = () => {
     document.getElementById('planets').scrollIntoView({
         behavior: 'smooth'
     });
-};
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const carouselTrack = document.querySelector('.carousel-track');
-    const planetItems = document.querySelectorAll('.planet-item');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    const currentPlanetNameDisplay = document.getElementById('current-planet-name');
+// Planet carousel
+let currentPlanet = 0;
+const totalPlanets = 8;
+const planetTrack = document.getElementById('planetTrack');
 
-    const planetsData = [
-        { name: "BUMI" },
-        { name: "MERKURIUS" },
-        { name: "VENUS" },
-        { name: "MARS" },
-        { name: "JUPITER" },
-        { name: "SATURNUS" },
-        { name: "URANUS" },
-        { name: "NEPTUNUS" }
-    ];
+const updateCarousel = () => {
+    const translateX = -currentPlanet * 100;
+    planetTrack.style.transform = `translateX(${translateX}%)`;
+}
 
-    let currentIndex = 0;
-
-    const updateCarousel = () => {
-        const offset = -currentIndex * window.innerWidth;
-        carouselTrack.style.transform = `translateX(${offset}px)`;
-
-        if (planetsData[currentIndex]) {
-            currentPlanetNameDisplay.textContent = planetsData[currentIndex].name;
-        } else {
-            currentPlanetNameDisplay.textContent = planetItems[currentIndex].querySelector('img').alt.toUpperCase();
-        }
-    };
-
-    prevButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = planetItems.length - 1;
-        }
-        updateCarousel();
-    });
-
-    nextButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentIndex < planetItems.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        updateCarousel();
-    });
-
-    window.addEventListener('resize', updateCarousel);
+const nextPlanet = () => {
+    currentPlanet = (currentPlanet + 1) % totalPlanets;
     updateCarousel();
-    createStars(); // panggil setelah DOM ready
+}
+
+const previousPlanet = () => {
+    currentPlanet = (currentPlanet - 1 + totalPlanets) % totalPlanets;
+    updateCarousel();
+}
+
+// Touch/swipe for mobile
+let startX = null;
+let currentX = null;
+let isDragging = false;
+
+planetTrack.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
 });
+
+planetTrack.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+});
+
+planetTrack.addEventListener('touchend', () => {
+    if (!isDragging) return;
+
+    const diffX = startX - currentX;
+    const threshold = 50;
+
+    if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+            nextPlanet();
+        } else {
+            previousPlanet();
+        }
+    }
+
+    isDragging = false;
+    startX = null;
+    currentX = null;
+});
+
+// Mouse drag for desktop
+planetTrack.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+    isDragging = true;
+    currentX = null;
+    planetTrack.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX;
+});
+
+document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+
+    if (currentX !== null) {
+        const diffX = startX - currentX;
+        const threshold = 50;
+
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                nextPlanet();
+            } else {
+                previousPlanet();
+            }
+        }
+    }
+
+    isDragging = false;
+    startX = null;
+    currentX = null;
+    planetTrack.style.cursor = 'grab';
+});
+
+// Initialize
+createStars();
+updateCarousel();

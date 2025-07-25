@@ -1,6 +1,10 @@
-/* Gaya Dasar Body */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: "Arial", sans-serif;
     background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0d1421 100%);
     color: white;
@@ -14,8 +18,6 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: fixed;
-    z-index: -1; /* Pastikan di belakang konten */
 }
 
 .star {
@@ -38,8 +40,12 @@ body {
         opacity: 0.9;
     }
 
-/* Animasi Bintang */
+
+/* Animations global */
+
+/* Animation stars */
 @keyframes twinkle {
+
     0%, 100% {
         opacity: 0.5;
     }
@@ -49,7 +55,7 @@ body {
     }
 }
 
-/* Animasi Glow Teks */
+/* Animation glow for text */
 @keyframes glow {
     0% {
         text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
@@ -63,7 +69,3 @@ body {
         text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
     }
 }
-
-/* ==== SEMUA GAYA KAMU (HEAD) TETAP DIPAKAI ==== */
-/* Mulai dari header, carousel, responsive, planet-info, hingga halaman detail */
-/* Paste seluruh isi CSS kamu dari <header> sampai akhir (tanpa bagian body yang duplikat) */
