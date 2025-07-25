@@ -4,23 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar System</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="styles/detail/styles.css" />
-    <link rel="stylesheet" href="styles/homepage/audio.css" />
-    <link rel="stylesheet" href="styles/homepage/hero-section.css" />
-    <link rel="stylesheet" href="styles/homepage/modal.css" />
-    <link rel="stylesheet" href="styles/homepage/planets-section.css" />
+    <link rel="stylesheet" href="/styles/homepage/hero-section.css" />
+    <link rel="stylesheet" href="/styles/homepage/planets-section.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <div id="space"></div>
 
-    <!-- Section Header -->
     <section class="header">
         <div class="container">
             <h1>Solar System</h1>
@@ -42,99 +35,25 @@
         <div class="planet mercury"></div>
     </section>
 
-    <!-- Section planets -->
     <section class="planets-section" id="planets">
         <h2 class="planets-title">Discover Our Solar System</h2>
 
         <div class="planet-carousel">
             <div class="planet-track" id="planetTrack">
                 <!-- Mercury -->
-                <div class="planet-container" data-name="mercury">
-                    <img src="images/Merkurius.png" class="planet-image" />
+                <div class="planet-container">
+                    <img src="/images/Merkurius.png" class="planet-image" />
                     <h3>Mercury</h3>
                 </div>
-                <!-- Venus -->
-                <div class="planet-container" data-name="venus">
-                    <img src="images/venus.png" class="planet-image" />
-                    <h3>Venus</h3>
-                </div>
+
                 <!-- Earth -->
-                <div class="planet-container" data-name="earth">
-                    <img src="images/bumi.png" class="planet-image" />
+                <div class="planet-container">
+                    <img src="/images/bumi.png" class="planet-image" />
                     <h3>Earth</h3>
                 </div>
-                <!-- Mars -->
-                <div class="planet-container" data-name="mars">
-                    <img src="images/Mars.png" class="planet-image" />
-                    <h3>Mars</h3>
-                </div>
-                <!-- Jupiter -->
-                <div class="planet-container" data-name="jupiter">
-                    <img src="images/Jupiter.png" class="planet-image" />
-                    <h3>Jupiter</h3>
-                </div>
-                <!-- Saturnus -->
-                <div class="planet-container saturnus" data-name="saturnus">
-                    <img src="images/saturnus.png" class="planet-image" />
-                    <h3>Saturnus</h3>
-                </div>
-                <!-- Uranus -->
-                <div class="planet-container" data-name="uranus">
-                    <img src="images/Uranus.png" class="planet-image" />
-                    <h3>Uranus</h3>
-                </div>
-                <!-- Neptune -->
-                <div class="planet-container" data-name="neptune">
-                    <img src="images/neptunus.png" class="planet-image" />
-                    <h3>Neptune</h3>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- Section details-->
-    <section class="planet-detail-section" id="planet-detail" style="display: none">
-        <button id="back-button">← Back</button>
-        <div class="planet-detail-layout">
-            <div class="planet-video-wrapper">
-                <div class="planet-detail-video" id="detail-video"></div>
-            </div>
-
-            <div class="planet-detail-overlay">
-                <h2 id="detail-title"></h2>
-                <p id="detail-content"></p>
-                <p id="detail-content-2"></p>
-                <a id="detail-reference"
-                   href="#"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Read More <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Greeting Modal -->
-    <div id="greeting-modal" class="modal">
-        <div class="start-in">
-            <div class="modal-content">
-                <img src="images/rocket.webp" alt="Rocket" class="rocket-img" />
-                <h2>Welcome to Solar System</h2>
-                <button id="start-btn">Let's Explore</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Button play/pause -->
-    <div id="audio-toggle">
-        <button id="toggle-btn">🔇</button>
-        <audio id="bg-audio" autoplay loop>
-            <source src="audio/calm-space-music-312291.mp3" type="audio/mpeg" />
-        </audio>
-    </div>
-
-    <script src="script.js"></script>
-    <script src="scripts/homepage/audio.js"></script>
-    <script src="scripts/detail/index.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

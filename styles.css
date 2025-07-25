@@ -40,12 +40,10 @@ body {
         opacity: 0.9;
     }
 
-
 /* Animations global */
 
 /* Animation stars */
 @keyframes twinkle {
-
     0%, 100% {
         opacity: 0.5;
     }

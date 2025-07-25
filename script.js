@@ -30,7 +30,7 @@ const createStars = () => {
         star.style.height = starSize + 'px';
         star.style.animationDelay = Math.random() * 3 + 's';
         // durations
-        star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        star.style.animationDuration = Math.random() * 2 + 2 + 's';
 
         space.appendChild(star);
     }
@@ -45,7 +45,8 @@ const scrollToPlanets = () => {
 
 // Planet carousel
 let currentPlanet = 0;
-const totalPlanets = 8;
+// TODO: Increse total planet after add more image
+const totalPlanets = 2;
 const planetTrack = document.getElementById('planetTrack');
 
 const updateCarousel = () => {
@@ -101,7 +102,6 @@ planetTrack.addEventListener('touchend', () => {
 planetTrack.addEventListener('mousedown', (e) => {
     startX = e.clientX;
     isDragging = true;
-    currentX = null;
     planetTrack.style.cursor = 'grabbing';
 });
 
@@ -113,16 +113,14 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => {
     if (!isDragging) return;
 
-    if (currentX !== null) {
-        const diffX = startX - currentX;
-        const threshold = 50;
+    const diffX = startX - currentX;
+    const threshold = 50;
 
-        if (Math.abs(diffX) > threshold) {
-            if (diffX > 0) {
-                nextPlanet();
-            } else {
-                previousPlanet();
-            }
+    if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+            nextPlanet();
+        } else {
+            previousPlanet();
         }
     }
 
