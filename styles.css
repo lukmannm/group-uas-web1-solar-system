@@ -71,7 +71,6 @@ body {
 /* ========== Solar Facts Section ========== */
 .solar-facts {
     padding: 4rem 2rem;
-    background: #0a0a0a;
     color: white;
 }
 
@@ -310,4 +309,25 @@ body {
         padding: 8px 10px;
         font-size: 0.9em;
     }
+}
+/* styles.css atau file CSS yang relevan */
+
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Memberi jarak dari konten di atasnya */
+    background-color: #0d121f; /* Warna latar belakang gelap */
+    color: #aaa; /* Warna teks abu-abu terang */
+    font-size: 0.9em;
+}
+/* CSS untuk bagian "Solar System Facts" */
+
+/* Memberikan jarak atas pada judul "The Eight Planets:" dari elemen sebelumnya (misal: "Get the Facts") */
+.facts-text h3 {
+    margin-top: 20px;
+}
+
+/* Memberikan jarak bawah pada daftar planet (ordered list) dari elemen setelahnya */
+.facts-text ol {
+    margin-bottom: 20px;
 }
