@@ -159,3 +159,155 @@ body {
             height: 250px;
         }
 }
+
+/* ========== Planet Distance Table Section ========== */
+.header-detail { /* Menggunakan gaya header yang sudah ada di styles.css */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+    .header-detail .header-left {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #00bfff;
+    }
+
+    .header-detail nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .header-detail nav li {
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+        .header-detail nav li:last-child {
+            border-right: none;
+        }
+
+    .header-detail nav a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+        .header-detail nav a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+.distance-content {
+    flex-grow: 1; /* Agar konten mengambil sisa ruang vertikal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px 50px 20px; /* Padding atas untuk header */
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    .distance-content h1 {
+        color: #00bfff;
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+
+.distance-table-container {
+    width: 100%;
+    overflow-x: auto; /* Agar tabel bisa discroll di layar kecil */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+}
+
+.distance-table {
+    width: 100%;
+    border-collapse: collapse; /* Menghilangkan spasi antar sel */
+    margin-top: 20px;
+}
+
+    .distance-table th, .distance-table td {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 1.1em;
+    }
+
+    .distance-table th {
+        background-color: rgba(0, 191, 255, 0.3);
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .distance-table tr:nth-child(even) { /* Gaya untuk baris genap */
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .distance-table tr:hover { /* Efek hover pada baris */
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+.back-button-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #00bfff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .back-button:hover {
+        background-color: #009acd;
+    }
+
+/* Responsive adjustments for Distance Table */
+@media (max-width: 768px) {
+    .header-detail {
+        padding: 15px 20px;
+    }
+
+        .header-detail nav {
+            display: none; /* Hide navigation on smaller screens if it's meant for a dedicated distance page */
+        }
+
+    .distance-content {
+        padding: 80px 10px 20px 10px;
+    }
+
+        .distance-content h1 {
+            font-size: 2.5em;
+        }
+
+    .distance-table th, .distance-table td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+}

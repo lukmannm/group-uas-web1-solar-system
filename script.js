@@ -46,7 +46,7 @@ const scrollToPlanets = () => {
 // Planet carousel
 let currentPlanet = 0;
 // TODO: Increse total planet after add more image
-const totalPlanets = 2;
+const totalPlanets = 8;
 const planetTrack = document.getElementById('planetTrack');
 
 const updateCarousel = () => {

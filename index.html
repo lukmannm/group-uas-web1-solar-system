@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar System</title>
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/homepage/hero-section.css" />
     <link rel="stylesheet" href="styles/homepage/planets-section.css" />
     <link rel="stylesheet" href="styles/homepage/audio.css" />
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="styles/detail/styles.css" />
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
@@ -22,7 +20,6 @@
 <body>
     <div id="space"></div>
 
-    <!-- Section Header -->
     <section class="header">
         <div class="container">
             <h1>Solar System</h1>
@@ -30,7 +27,6 @@
             <button class="explore-btn" onclick="scrollToPlanets()">Explore Planets</button>
         </div>
 
-        <!-- Planet Illustrations -->
         <div class="planet earth"></div>
         <div class="planet mars"></div>
         <div class="planet jupiter"></div>
@@ -39,7 +35,6 @@
         <div class="planet mercury"></div>
     </section>
 
-    <!-- ✅ Solar System Facts Section with YouTube Video -->
     <section class="solar-facts">
         <div class="facts-container">
             <div class="facts-text">
@@ -75,7 +70,6 @@
         </div>
     </section>
 
-    <!-- Section Planets -->
     <section class="planets-section" id="planets">
         <h2 class="planets-title">Discover Our Solar System</h2>
         <div class="planet-carousel">
@@ -102,7 +96,7 @@
                 </div>
                 <div class="planet-container" data-name="saturnus">
                     <img src="images/saturnus.png" class="planet-image" />
-                    <h3>Saturnus</h3>
+                    <h3>Saturn</h3>
                 </div>
                 <div class="planet-container" data-name="uranus">
                     <img src="images/Uranus.png" class="planet-image" />
@@ -116,7 +110,6 @@
         </div>
     </section>
 
-    <!-- Section Detail Planet -->
     <section class="planet-detail-section" id="planet-detail" style="display: none">
         <button id="back-button">← Back</button>
         <div class="planet-detail-layout">
@@ -134,7 +127,6 @@
         </div>
     </section>
 
-    <!-- Modal Welcome -->
     <div id="greeting-modal" class="modal">
         <div class="start-in">
             <div class="modal-content">
@@ -145,7 +137,6 @@
         </div>
     </div>
 
-    <!-- Audio Controls -->
     <div id="audio-toggle">
         <button id="toggle-btn">🔇</button>
         <audio id="bg-audio" autoplay loop>
@@ -153,7 +144,62 @@
         </audio>
     </div>
 
-    <!-- Scripts -->
+    <div class="distance-content">
+        <h1>Planet Distances in the Solar System</h1>
+
+        <div class="distance-table-container">
+            <table class="distance-table">
+                <thead>
+                    <tr>
+                        <th>Planet</th>
+                        <th>Average Distance from Sun (AU)</th>
+                        <th>Average Distance from Sun (km)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mercury</td>
+                        <td>0.39 AU</td>
+                        <td>57.9 Million km</td>
+                    </tr>
+                    <tr>
+                        <td>Venus</td>
+                        <td>0.72 AU</td>
+                        <td>108.2 Million km</td>
+                    </tr>
+                    <tr>
+                        <td>Earth</td>
+                        <td>1.00 AU</td>
+                        <td>149.6 Million km</td>
+                    </tr>
+                    <tr>
+                        <td>Mars</td>
+                        <td>1.52 AU</td>
+                        <td>227.9 Million km</td>
+                    </tr>
+                    <tr>
+                        <td>Jupiter</td>
+                        <td>5.20 AU</td>
+                        <td>778.5 Million km</td>
+                    </tr>
+                    <tr>
+                        <td>Saturn</td>
+                        <td>9.58 AU</td>
+                        <td>1.434 Billion km</td>
+                    </tr>
+                    <tr>
+                        <td>Uranus</td>
+                        <td>19.23 AU</td>
+                        <td>2.871 Billion km</td>
+                    </tr>
+                    <tr>
+                        <td>Neptune</td>
+                        <td>30.10 AU</td>
+                        <td>4.498 Billion km</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     <script src="script.js"></script>
     <script src="scripts/homepage/audio.js"></script>
     <script src="scripts/detail/index.js"></script>
