@@ -8,7 +8,7 @@ const createStars = () => {
 
         // Random Position
         star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 200 + '%';
+        star.style.top = Math.random() * 330 + '%';
 
         // Different star sizes
         const size = Math.random();
@@ -37,8 +37,8 @@ const createStars = () => {
 }
 
 // Scroll to planets section
-const scrollToPlanets = () => {
-    document.getElementById('planets').scrollIntoView({
+const scrollToPlanets = (id) => {
+    document.getElementById(id).scrollIntoView({
         behavior: 'smooth'
     });
 }

@@ -96,6 +96,7 @@
     .planet-detail-layout {
         flex-direction: column;
         align-items: center;
+        margin-top: 20px;
     }
 
     .planet-video-wrapper,
@@ -106,5 +107,9 @@
 
     .planet-detail-overlay {
         text-align: center;
+    }
+
+    .planet-video-wrapper iframe {
+        height: 200px;
     }
 }

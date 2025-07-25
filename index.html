@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +8,8 @@
 
     <link rel="stylesheet" href="styles/homepage/hero-section.css" />
     <link rel="stylesheet" href="styles/homepage/planets-section.css" />
-    <link rel="stylesheet" href="styles/homepage/audio.css" />
     <link rel="stylesheet" href="styles/homepage/modal.css" />
+    <link rel="stylesheet" href="styles/homepage/navbar.css" />
     <link rel="stylesheet" href="styles/detail/styles.css" />
     <link rel="stylesheet" href="styles.css" />
 
@@ -17,14 +18,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
     <div id="space"></div>
 
-    <section class="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item active" data-tooltip="Home" data-section="header">
+                    <i class="fas fa-home"></i>
+                </li>
+                <li class="nav-item" data-tooltip="Solar Facts" data-section="solar-facts">
+                    <i class="fas fa-sun"></i>
+                </li>
+                <li class="nav-item" data-tooltip="Planets" data-section="planets">
+                    <i class="fas fa-earth-asia"></i>
+                </li>
+                <li class="nav-item" data-tooltip="Planets" data-section="distance">
+                    <i class="fas fa-table"></i>
+                </li>
+                <li class="nav-item" data-tooltip="Music">
+                    <button id="toggle-btn">🔇</button>
+                    <div id="audio-toggle">
+                        <audio id="bg-audio" autoplay loop>
+                            <source src="audio/calm-space-music-312291.mp3" type="audio/mpeg" />
+                        </audio>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="header" id="header">
         <div class="container">
             <h1>Solar System</h1>
             <p>Explore the wonders of our solar system, from the blazing Sun to the distant icy planets.</p>
-            <button class="explore-btn" onclick="scrollToPlanets()">Explore Planets</button>
+            <button class="explorer-btn" id="explorer-btn" onclick="scrollToPlanets('solar-facts')">Hi</button>
         </div>
 
         <div class="planet earth"></div>
@@ -35,18 +65,21 @@
         <div class="planet mercury"></div>
     </section>
 
-    <section class="solar-facts">
+    <section class="solar-facts" id="solar-facts">
         <div class="facts-container">
             <div class="facts-text">
                 <h2>Solar System Facts</h2>
                 <p>
                     <strong>
-                        Our solar system includes the Sun, eight planets, five officially named dwarf planets, hundreds of moons, and thousands of asteroids and comets.
+                        Our solar system includes the Sun, eight planets, five officially named dwarf planets, hundreds
+                        of moons, and thousands of asteroids and comets.
                     </strong>
                 </p>
                 <p>
-                    Our solar system is located in the Milky Way, a barred spiral galaxy with two major arms, and two minor arms.
-                    Our Sun is in a small, partial arm of the Milky Way called the Orion Arm, or Orion Spur, between the Sagittarius and Perseus arms.
+                    Our solar system is located in the Milky Way, a barred spiral galaxy with two major arms, and two
+                    minor arms.
+                    Our Sun is in a small, partial arm of the Milky Way called the Orion Arm, or Orion Spur, between the
+                    Sagittarius and Perseus arms.
                     Our solar system orbits the center of the galaxy at about 515,000 mph (828,000 kph).
                     It takes about 230 million years to complete one orbit around the galactic center.
                 </p>
@@ -74,35 +107,35 @@
         <div class="planet-carousel">
             <div class="planet-track" id="planetTrack">
                 <div class="planet-container" data-name="mercury">
-                    <img src="images/Merkurius.png" class="planet-image" />
+                    <img src="images/mercury.png" class="planet-image" />
                     <h3>Mercury</h3>
                 </div>
                 <div class="planet-container" data-name="venus">
-                    <img src="images/venus.png" class="planet-image" />
+                    <img src="images/venus.webp" class="planet-image" />
                     <h3>Venus</h3>
                 </div>
                 <div class="planet-container" data-name="earth">
-                    <img src="images/bumi.png" class="planet-image" />
+                    <img src="images/earth.png" class="planet-image" />
                     <h3>Earth</h3>
                 </div>
                 <div class="planet-container" data-name="mars">
-                    <img src="images/Mars.png" class="planet-image" />
+                    <img src="images/mars.png" class="planet-image" />
                     <h3>Mars</h3>
                 </div>
                 <div class="planet-container" data-name="jupiter">
-                    <img src="images/Jupiter.png" class="planet-image" />
+                    <img src="images/jupiter.png" class="planet-image" />
                     <h3>Jupiter</h3>
                 </div>
-                <div class="planet-container" data-name="saturnus">
-                    <img src="images/saturnus.png" class="planet-image" />
+                <div class="planet-container saturnus" data-name="saturnus">
+                    <img src="images/saturnus.webp" class="planet-image" />
                     <h3>Saturn</h3>
                 </div>
                 <div class="planet-container" data-name="uranus">
-                    <img src="images/Uranus.png" class="planet-image" />
+                    <img src="images/uranus.png" class="planet-image" />
                     <h3>Uranus</h3>
                 </div>
                 <div class="planet-container" data-name="neptune">
-                    <img src="images/neptunus.png" class="planet-image" />
+                    <img src="images/neptune.png" class="planet-image" />
                     <h3>Neptune</h3>
                 </div>
             </div>
@@ -126,24 +159,7 @@
         </div>
     </section>
 
-    <div id="greeting-modal" class="modal">
-        <div class="start-in">
-            <div class="modal-content">
-                <img src="images/rocket.webp" alt="Rocket" class="rocket-img" />
-                <h2>Welcome to Solar System</h2>
-                <button id="start-btn">Let's Explore</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="audio-toggle">
-        <button id="toggle-btn">🔇</button>
-        <audio id="bg-audio" autoplay loop>
-            <source src="audio/calm-space-music-312291.mp3" type="audio/mpeg" />
-        </audio>
-    </div>
-
-    <div class="distance-content">
+    <div class="distance-content" id="distance">
         <h1>Planet Distances in the Solar System</h1>
 
         <div class="distance-table-container">
@@ -200,8 +216,31 @@
             </table>
         </div>
     </div>
+
+    <div id="greeting-modal" class="modal">
+        <div class="start-in">
+            <div class="modal-content">
+                <img src="images/rocket.webp" alt="Rocket" class="rocket-img" />
+                <h2>Welcome to Solar System</h2>
+                <p>Explore the wonders of our solar system, from the blazing Sun to the distant icy planets.</p>
+                <form id="explorer-form">
+                    <div id="input-group">
+                        <label for="explorer-name">What's your name, explorer?</label>
+                        <input type="text" id="explorer-name" class="input-field" placeholder="Enter your name..."
+                            maxlength="50" autocomplete="given-name">
+                    </div>
+
+                    <button type="submit" id="start-btn" disabled>
+                        Let's Explore
+                        <i class="fas fa-rocket rocket-icon"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
-    <script src="scripts/homepage/audio.js"></script>
+    <script src="scripts/modal.js"></script>
     <script src="scripts/detail/index.js"></script>
 </body>
+
 </html>
