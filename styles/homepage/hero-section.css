@@ -27,7 +27,7 @@
     opacity: 0.8;
 }
 
-.explore-btn {
+.explorer-btn {
     background: linear-gradient(to right, #00c6ff, #0072ff);
     color: white;
     box-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
@@ -39,7 +39,7 @@
     transition: all 0.3s ease;
 }
 
-.explore-btn:hover {
+.explorer-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
 }
@@ -262,7 +262,7 @@
         font-size: 0.9rem;
     }
 
-    .explore-btn {
+    .explorer-btn {
         padding: 10px 20px;
         font-size: 0.9rem;
     }

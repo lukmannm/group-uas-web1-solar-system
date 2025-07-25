@@ -9,7 +9,7 @@ const backButton = document.getElementById("back-button");
 
 const planetData = {
     mercury: {
-        image: "/images/Merkurius.png",
+        image: "/images/mercury.png",
         title: "Mercury",
         youtubeUrl: "https://www.youtube.com/embed/0KBjnNuhRHs?si=nwMOfp6Q089a7mVb",
         referenceUrl: "https://science.nasa.gov/earth/facts/",
@@ -25,7 +25,7 @@ const planetData = {
         content2: "Venus is similar in structure and size to Earth, and is sometimes called Earth's evil twin. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains."
     },
     earth: {
-        image: "/images/bumi.png",
+        image: "/images/earth.png",
         title: "Earth",
         youtubeUrl: "https://www.youtube.com/embed/HCDVN7DCzYE?si=qhHR9iIbQBwggX2U",
         referenceUrl: "https://science.nasa.gov/earth/facts/",
@@ -33,16 +33,15 @@ const planetData = {
         content2: `Earth is the only planet in the solar system whose English name does not come from Greek or Roman mythology. The name was taken from Old English and Germanic. It simply means "the ground." There are, of course, many names for our planet in the thousands of languages spoken by the people of the third planet from the Sun.`
     },
     mars: {
-        image: "/images/bumi.png",
-        title: "Earth",
+        image: "/images/mars.png",
+        title: "Mars",
         youtubeUrl: "https://www.youtube.com/embed/HCDVN7DCzYE?si=qhHR9iIbQBwggX2U",
         referenceUrl: "https://science.nasa.gov/earth/facts/",
         content: "While Earth is only the fifth largest planet in the solar system, it is the only world in our solar system with liquid water on the surface. Just slightly larger than nearby Venus, Earth is the biggest of the four planets closest to the Sun, all of which are made of rock and metal.",
         content2: `Earth is the only planet in the solar system whose English name does not come from Greek or Roman mythology. The name was taken from Old English and Germanic. It simply means "the ground." There are, of course, many names for our planet in the thousands of languages spoken by the people of the third planet from the Sun.`
     },
-
-        jupiter: {
-        image: "/images/Jupiter.png",
+    jupiter: {
+        image: "/images/jupiter.png",
         title: "Jupiter",
         youtubeUrl: "https://www.youtube.com/embed/PtkqwslbLY8?si=F96fsejo655FSIBD",
         referenceUrl: "https://science.nasa.gov/jupiter/jupiter-facts/",
