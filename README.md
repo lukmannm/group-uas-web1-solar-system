@@ -47,5 +47,5 @@ This website was created as part of a group project.
 
 This project was developed by:
 
-- **https://github.com/laylafitriaa** – Front-end Developer and Design
-- **https://github.com/lukmannm** – Front-end Developer
+- **https://github.com/laylafitriaa**
+- **https://github.com/lukmannm**
