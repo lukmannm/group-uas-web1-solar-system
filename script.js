@@ -8,7 +8,7 @@ const createStars = () => {
 
         // Random Position
         star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 330 + '%';
+        star.style.top = Math.random() * 310 + '%';
 
         // Different star sizes
         const size = Math.random();

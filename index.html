@@ -5,7 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solar System</title>
-
+    <!-- 
+    Mata Kuliah: Pemrograman Web 1
+    Kelas: IF205 
+    Anggota Kelompok:
+        - Lukman Nur Hakim (240401010181)
+        - Layla Fitria (240401010074)
+    -->
     <link rel="stylesheet" href="styles/homepage/hero-section.css" />
     <link rel="stylesheet" href="styles/homepage/planets-section.css" />
     <link rel="stylesheet" href="styles/homepage/modal.css" />
@@ -37,8 +43,8 @@
                 <li class="nav-item" data-tooltip="Planets" data-section="distance">
                     <i class="fas fa-table"></i>
                 </li>
-                <li class="nav-item" data-tooltip="Music">
-                    <button id="toggle-btn">🔇</button>
+                <li class="nav-item" data-tooltip="Music" id="toggle-btn">
+                    <button>🔇</button>
                     <div id="audio-toggle">
                         <audio id="bg-audio" autoplay loop>
                             <source src="audio/calm-space-music-312291.mp3" type="audio/mpeg" />
@@ -87,17 +93,19 @@
                     Get the Facts <i class="fas fa-arrow-right"></i>
                 </a>
 
-                <h3>The Eight Planets:</h3>
-                <ol style="margin-top: 15px;">
-                    <li>Mercury</li>
-                    <li>Venus</li>
-                    <li>Earth</li>
-                    <li>Mars</li>
-                    <li>Jupiter</li>
-                    <li>Saturn</li>
-                    <li>Uranus</li>
-                    <li>Neptune</li>
-                </ol>
+                <div class="planets-list">
+                    <h3>The Eight Planets:</h3>
+                    <ol style="margin-top: 15px;">
+                        <li>Mercury</li>
+                        <li>Venus</li>
+                        <li>Earth</li>
+                        <li>Mars</li>
+                        <li>Jupiter</li>
+                        <li>Saturn</li>
+                        <li>Uranus</li>
+                        <li>Neptune</li>
+                    </ol>
+                </div>
             </div>
             <div class="facts-video">
                 <video controls width="100%" height="315" class="facts-local-video">
@@ -239,7 +247,7 @@
                     <div id="input-group">
                         <label for="explorer-name">What's your name, explorer?</label>
                         <input type="text" id="explorer-name" class="input-field" placeholder="Enter your name..."
-                               maxlength="50" autocomplete="given-name">
+                            maxlength="50" autocomplete="given-name">
                     </div>
 
                     <button type="submit" id="start-btn" disabled>
