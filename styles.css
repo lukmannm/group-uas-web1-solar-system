@@ -265,28 +265,6 @@ body {
         background-color: rgba(255, 255, 255, 0.15);
     }
 
-.back-button-container {
-    width: 100%;
-    text-align: center;
-    margin-top: 40px;
-    padding-bottom: 50px;
-}
-
-.back-button {
-    display: inline-block;
-    background-color: #00bfff;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-    .back-button:hover {
-        background-color: #009acd;
-    }
-
 /* Responsive adjustments for Distance Table */
 @media (max-width: 768px) {
     .header-detail {
@@ -310,7 +288,6 @@ body {
         font-size: 0.9em;
     }
 }
-/* styles.css atau file CSS yang relevan */
 
 .main-footer {
     text-align: center;
@@ -320,6 +297,7 @@ body {
     color: #aaa; /* Warna teks abu-abu terang */
     font-size: 0.9em;
 }
+
 /* CSS untuk bagian "Solar System Facts" */
 
 /* Memberikan jarak atas pada judul "The Eight Planets:" dari elemen sebelumnya (misal: "Get the Facts") */
