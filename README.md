@@ -16,7 +16,7 @@ This website was created as part of a group project.
 ## 🛠️ Tech Stack
 
 - HTML5  
-- CSS3 (with animations)  
+- CSS3
 - JavaScript (Vanilla)  
 
 ## 💻 How to Use
