@@ -36,7 +36,7 @@ const createStars = () => {
     }
 }
 
-// Scroll to planets section
+// Scroll to sections
 const scrollToPlanets = (id) => {
     document.getElementById(id).scrollIntoView({
         behavior: 'smooth'
@@ -45,7 +45,7 @@ const scrollToPlanets = (id) => {
 
 // Planet carousel
 let currentPlanet = 0;
-const totalPlanets = 8; // Memilih versi ini karena sama saja dan lebih bersih
+const totalPlanets = 8;
 const planetTrack = document.getElementById('planetTrack');
 
 const updateCarousel = () => {
@@ -101,7 +101,7 @@ planetTrack.addEventListener('touchend', () => {
 planetTrack.addEventListener('mousedown', (e) => {
     startX = e.clientX;
     isDragging = true;
-    currentX = null; // Memilih versi dari HEAD yang mereset currentX
+    currentX = null;
     planetTrack.style.cursor = 'grabbing';
 });
 
@@ -113,7 +113,7 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => {
     if (!isDragging) return;
 
-    if (currentX !== null) { // Mempertahankan if-condition dari HEAD
+    if (currentX !== null) {
         const diffX = startX - currentX;
         const threshold = 50;
 
